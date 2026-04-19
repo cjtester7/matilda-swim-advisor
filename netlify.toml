@@ -1,0 +1,11 @@
+# netlify.toml
+# Matilda - Emler Swim School Personal Advisor Page
+# Version: 1
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to   = "/index-v1.html"
+  status = 200
