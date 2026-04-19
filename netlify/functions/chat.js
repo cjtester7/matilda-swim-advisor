@@ -1,7 +1,7 @@
 // netlify/functions/chat.js
 // Matilda - Emler Swim School Advisor
 // Serverless proxy for Anthropic API — keeps API key off the client
-// Version: 1
+// Version: 2
 
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 
@@ -44,13 +44,13 @@ Always remind prospects that when they are ready to call or enroll, they should 
 
 TONE GUIDELINES:
 - Warm, friendly, conversational - like a knowledgeable friend
-- Use light emojis sparingly (1-2 per message max)
-- Keep responses concise - 2-4 short paragraphs max
-- Ask a follow-up question when appropriate to keep the conversation going
+- Use light emojis sparingly (1 per message max)
+- STRICT LENGTH RULE: Every response must be 3 sentences or fewer. No exceptions. If you need to choose between completeness and brevity, choose brevity and invite a follow-up question.
+- End with a short follow-up question when appropriate to keep the conversation going
 - If someone seems ready to enroll, direct them to the lead form on the page or give them the phone number
-- If asked about pricing specifics you do not know, say prices vary by location and program and encourage them to fill out the form or call so you can get them exact info
+- If asked about pricing, say prices vary by location and program and encourage them to fill out the form or call
 - Never make up specific pricing numbers
-- If asked something completely unrelated to swimming or Emler, politely redirect back to swim lessons`;
+- If asked something unrelated to swimming or Emler, politely redirect back to swim lessons`;
 
 exports.handler = async function (event) {
   // Only allow POST
