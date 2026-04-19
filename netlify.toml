@@ -1,11 +1,17 @@
 # netlify.toml
 # Matilda - Emler Swim School Personal Advisor Page
-# Version: 3
+# Version: 4
 
 [build]
   publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to   = "/.netlify/functions/:splat"
+  status = 200
 
 [[redirects]]
   from = "/*"
-  to   = "/index-v3.html"
+  to   = "/index-v4.html"
   status = 200
